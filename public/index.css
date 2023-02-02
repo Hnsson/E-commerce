@@ -1,0 +1,58 @@
+* {
+    margin:0;
+    padding:0;
+}
+
+.main {
+    width:100%;
+    height:45vh;
+    
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+    .main h1 {
+        text-align: center;
+        text-transform: uppercase;
+        font-size:75px;
+    }
+
+
+.products {
+    width:80%;
+    margin:auto;
+    justify-self:center;
+
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-auto-rows: auto;
+    grid-gap:1rem;
+}
+
+.product {
+    width:100%;
+    height:400px;
+}
+
+.product .image {
+    width:100%;
+    height:75%;
+}
+.product .image img {
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.product .title {
+    font-size:12px;
+    height:15%;
+    display:flex;
+    justify-content:flex-start;
+    align-items: center;
+}
+
+.prodcut .price {
+    height:10%;
+}

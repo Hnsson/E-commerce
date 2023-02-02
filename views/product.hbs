@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../product.css">
+
+    <title>Document</title>
+</head>
+<body>
+    <a href="/">Home</a>
+    {{#if product}}
+        <div class="product">
+            <div class="product-image">
+                <img src="../{{product.src}}">
+            </div>
+            <div class="product-info">
+                <div class="title">
+                    <h1>{{product.name}}</h1>
+                    <p>ID: {{product._id}}</p>
+                </div>
+                <div class="price">
+                    <p><span class="price-nums">{{product.price}},00</span> Inkl. moms</p>
+                    <form action="" method="POST">
+                        <button type="submit">Add to cart</button>
+                    </form>
+                </div>
+                <div class="description">
+                    <p>{{product.desc}}</p>
+                </div>
+            </div>
+        </div>
+    {{else}}
+        <h1>Uknown Id</h1>
+    {{/if}}
+</body>
+</html>

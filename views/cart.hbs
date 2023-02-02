@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="cart.css">
+
+    <title>Document</title>
+</head>
+<body>
+    <div class="main">
+        <h1>Your cart!</h1>
+    </div>
+    <div class="cart">
+    {{#each cart}}
+        <div class="cart-item">
+            <div class="cart-item-left">
+                <div class="cart-item-image">
+                    <img src={{this.src}}>
+                </div>
+                <div class="cart-item-info">
+                    <p>{{this.name}}</p>
+                </div>
+            </div>
+            <div class="cart-item-right">
+                    <div class="cart-item-price">
+                    <a class="remove-item" href="/cart/{{this._id}}">X</a>
+                    <form action="/cart" method="POST">
+                        <input id="number" type="number" name="{{this._id}}" value={{this.quant}} onchange="this.form.submit()" min="1" max="5">
+                        <p>{{this.price}} kr</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    {{/each}}
+    <div class="sum">
+        <div class="sum-left">
+            <p>Total cost:</p>
+        </div>
+        <div class="sum-right">
+            <p>{{total_price}} kr</p>
+        </div>
+    </div>
+    <div class="checkout">
+        <div class="checkout-button">
+            <form action="/cart/checkout" method="POST">
+                <button type="submit">Checkout</button>
+            </form>
+        </div>
+    </div>
+    </div>
+</body>
+</html>
